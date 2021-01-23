@@ -109,7 +109,7 @@ public class ThreadSpark {
         System.setProperty("hadoop.home.dir", "D:\\appinstall");
         System.setProperty("HADOOP_USER_NAME", "bbdoffline");
         SparkConf conf = new SparkConf();
-        conf.setAppName("bbd-wgj");
+        conf.setAppName("somnambulist-job");
         SparkSession sparkSession = SparkSession.builder().config(conf).master("local[*]").enableHiveSupport().getOrCreate();
         sparkSession.sparkContext().setLogLevel("WARN");
         return sparkSession;

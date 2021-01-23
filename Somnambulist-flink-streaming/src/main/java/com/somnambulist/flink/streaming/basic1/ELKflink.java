@@ -4,7 +4,7 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.jyong.java.entity.Person;
+import com.somnambulist.flink.streaming.entity.Person;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.RuntimeContext;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
@@ -67,7 +67,7 @@ public class ELKflink {
         list.add(new HttpHost("node02",9200,"http"));
         list.add(new HttpHost("node03",9200,"http"));
         //添加sink
-        ElasticsearchSink.Builder<Person> personBuilder = new ElasticsearchSink.Builder<>(list, new ElasticsearchSinkFunction<Person>() {
+        ElasticsearchSink.Builder<Person> personBuilder = new ElasticsearchSink.Builder<Person>(list, new ElasticsearchSinkFunction<Person>() {
             @Override
             public void process(Person element, RuntimeContext ctx, RequestIndexer indexer) {
                 String dt = DateTime.now().toString("yyyyMMdd");
