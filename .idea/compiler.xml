@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Somnambulist-java" />
+        <module name="Somnambulist-spark-sql" />
+        <module name="Somnambulist-flink-streaming" />
+        <module name="Somnambulist-spark-streaming" />
+        <module name="Somnambulist-flink-sql" />
+        <module name="Somnambulist-flink-core" />
+        <module name="Somnambulist-spark-core" />
+        <module name="Somnambulist-commons" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Somnambulist-commons" target="8" />
+      <module name="Somnambulist-flink-core" target="8" />
+      <module name="Somnambulist-flink-sql" target="8" />
+      <module name="Somnambulist-flink-streaming" target="8" />
+      <module name="Somnambulist-java" target="8" />
+      <module name="Somnambulist-spark-core" target="8" />
+      <module name="Somnambulist-spark-sql" target="8" />
+      <module name="Somnambulist-spark-streaming" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
