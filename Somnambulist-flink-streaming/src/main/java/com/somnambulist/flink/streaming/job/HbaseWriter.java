@@ -30,13 +30,12 @@ public class HbaseWriter extends RichSinkFunction<String> {
 
     /**
      * 建立HBase连接
-     *
      * @param parameters
      * @throws IOException
      */
     public void open(Configuration parameters) throws IOException {
         org.apache.hadoop.conf.Configuration config = HBaseConfiguration.create();
-        config.set(HConstants.ZOOKEEPER_QUORUM, "192.168.187.201");
+        config.set(HConstants.ZOOKEEPER_QUORUM, "10.28.102.158");
         config.set(HConstants.ZOOKEEPER_CLIENT_PORT, "2181");
         config.setInt(HConstants.HBASE_CLIENT_OPERATION_TIMEOUT, 30000);
         config.setInt(HConstants.HBASE_CLIENT_SCANNER_TIMEOUT_PERIOD, 30000);
@@ -74,7 +73,6 @@ public class HbaseWriter extends RichSinkFunction<String> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 }
