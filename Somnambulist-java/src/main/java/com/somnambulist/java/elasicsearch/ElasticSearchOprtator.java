@@ -4,8 +4,8 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.json.JSONUtil;
 import com.github.javafaker.Faker;
-import com.jyong.java.utils.MyHttps;
-import org.spark_project.guava.collect.Maps;
+import com.google.common.collect.Maps;
+
 
 import java.util.Locale;
 import java.util.Map;
@@ -48,7 +48,7 @@ public class ElasticSearchOprtator {
      * @return
      */
     public static boolean putDataToEs(String indexName, String json) {
-        return HttpRequest.post(MyHttps.getAvailableEsUrl() + "/" + indexName)
+        return HttpRequest.post(getAvailableEsUrl() + "/" + indexName)
                 .timeout(5 * 1000)
                 .body(JSONUtil.toJsonPrettyStr(json))
                 .execute()
@@ -64,7 +64,7 @@ public class ElasticSearchOprtator {
      */
 
     public static String getData(String indexName, String query) {
-        return HttpRequest.post(MyHttps.getAvailableEsUrl() + "/" + indexName + "/_search")
+        return HttpRequest.post(getAvailableEsUrl() + "/" + indexName + "/_search")
                 .timeout(8 * 1000)
                 .body(query)
                 .execute()
@@ -79,7 +79,11 @@ public class ElasticSearchOprtator {
      * @return
      */
     public static boolean deleteIndex(String indexName) {
-        return HttpRequest.delete(MyHttps.getAvailableEsUrl() + "/" + indexName).execute().isOk();
+        return HttpRequest.delete(getAvailableEsUrl() + "/" + indexName).execute().isOk();
+    }
+    
+    private static String getAvailableEsUrl(){
+        return "http://localhost:9200";
     }
 
 

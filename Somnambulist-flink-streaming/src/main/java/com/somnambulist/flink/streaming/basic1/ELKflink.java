@@ -2,12 +2,12 @@ package com.somnambulist.flink.streaming.basic1;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.somnambulist.flink.streaming.entity.Person;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.RuntimeContext;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
+import org.apache.flink.shaded.guava18.com.google.common.collect.Lists;
+import org.apache.flink.shaded.guava18.com.google.common.collect.Maps;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -63,19 +63,19 @@ public class ELKflink {
         Map<String, String> map = Maps.newHashMap();
         map.put("cluster.name", "my-application");
         List<HttpHost> list = Lists.newArrayList();
-        list.add(new HttpHost("node01",9200,"http"));
-        list.add(new HttpHost("node02",9200,"http"));
-        list.add(new HttpHost("node03",9200,"http"));
+        list.add(new HttpHost("node01", 9200, "http"));
+        list.add(new HttpHost("node02", 9200, "http"));
+        list.add(new HttpHost("node03", 9200, "http"));
         //添加sink
         ElasticsearchSink.Builder<Person> personBuilder = new ElasticsearchSink.Builder<Person>(list, new ElasticsearchSinkFunction<Person>() {
             @Override
             public void process(Person element, RuntimeContext ctx, RequestIndexer indexer) {
                 String dt = DateTime.now().toString("yyyyMMdd");
-                if(element !=null){
+                if (element != null) {
                     IndexRequest source = Requests.indexRequest()
                             .index("elk-person-" + dt)
                             .id(element.getId())
-                            .source(JSONUtil.toJsonStr(element),XContentType.JSON);
+                            .source(JSONUtil.toJsonStr(element), XContentType.JSON);
                     indexer.add(source);
                 }
             }
@@ -88,6 +88,6 @@ public class ELKflink {
 //                    restClientBuilder.setDefaultHeaders(defaultHeaders);
 //                });
         outputStreamOperator.addSink(personBuilder.build());
-                env.execute();
+        env.execute();
     }
 }

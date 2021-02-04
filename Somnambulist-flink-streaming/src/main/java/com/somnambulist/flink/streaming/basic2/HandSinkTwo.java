@@ -20,7 +20,7 @@ public class HandSinkTwo implements SinkFunction<String> {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         env.setParallelism(2);
-        DataStreamSource<String> stringDataStreamSource = env.addSource(new com.jyong.java.flinkDemo.HandSource());
+        DataStreamSource<String> stringDataStreamSource = env.addSource(new HandSource());
 
         stringDataStreamSource.addSink(new HandSinkTwo());
         env.execute();

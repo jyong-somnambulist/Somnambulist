@@ -1,6 +1,6 @@
 package com.somnambulist.java.redis;
 
-import com.jyong.java.utils.ServerConfig;
+import com.somnambulist.java.utils.ServerConfig;
 import redis.clients.jedis.Jedis;
 
 public class RedisDemo {

@@ -2,28 +2,23 @@ package com.somnambulist.java.Thread;
 
 public class CronTash {
 
-    public  void doTask(){
 
-
-
-    }
     public static void main(String[] args) {
-       int[] nums ={2,7,11,15};
-       int target = 9;
-        System.out.println(doTask(nums,target));
+        int[] nums = {2, 7, 11, 15};
+        int target = 9;
+        System.out.println(doTask(nums, target));
     }
 
 
-    public static String doTask(int[] nums,int target) {
+    public static String doTask(int[] nums, int target) {
 
-        for(int i=0;i<=nums.length;i++){
-            for(int j=0;j<=nums.length;j++){
-
-                    int sum = nums[i]+nums[j];
-                System.out.println("sum:"+sum);
-                    if(sum==target){
-                        return i+"---"+j;
-                    }
+        for (int i = 0; i <= nums.length; i++) {
+            for (int j = 0; j <= nums.length; j++) {
+                int sum = nums[i] + nums[j];
+                System.out.println("sum:" + sum);
+                if (sum == target) {
+                    return i + "---" + j;
+                }
 
             }
         }
