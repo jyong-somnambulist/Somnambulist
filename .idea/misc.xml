@@ -3,14 +3,14 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Somnambulist-flink-core/pom.xml" />
-        <option value="$PROJECT_DIR$/Somnambulist-flink-sql/pom.xml" />
         <option value="$PROJECT_DIR$/Somnambulist-flink-streaming/pom.xml" />
         <option value="$PROJECT_DIR$/Somnambulist-java/pom.xml" />
         <option value="$PROJECT_DIR$/Somnambulist-spark-core/pom.xml" />
         <option value="$PROJECT_DIR$/Somnambulist-spark-sql/pom.xml" />
         <option value="$PROJECT_DIR$/Somnambulist-spark-streaming/pom.xml" />
         <option value="$PROJECT_DIR$/Somnambulist-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/Somnambulist-flink-sql/pom.xml" />
+        <option value="$PROJECT_DIR$/Somnambulist-flink-core/pom.xml" />
       </list>
     </option>
   </component>

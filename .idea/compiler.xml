@@ -18,8 +18,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Somnambulist-commons" target="8" />
-      <module name="Somnambulist-flink-core" target="8" />
-      <module name="Somnambulist-flink-sql" target="8" />
+      <module name="Somnambulist-flink-core" target="1.5" />
+      <module name="Somnambulist-flink-sql" target="1.5" />
       <module name="Somnambulist-flink-streaming" target="8" />
       <module name="Somnambulist-java" target="8" />
       <module name="Somnambulist-spark-core" target="8" />

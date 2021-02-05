@@ -30,6 +30,7 @@ public class HbaseWriter extends RichSinkFunction<String> {
 
     /**
      * 建立HBase连接
+     *
      * @param parameters
      * @throws IOException
      */
