@@ -9,7 +9,7 @@ import java.net.Socket;
 public class ProduceSocketDataToPort {
 
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket("192.168.179.17", 9999);
+        Socket socket = new Socket("localhost", 9999);
         // 向服务端程序发送数据
         OutputStream ops = socket.getOutputStream();
         OutputStreamWriter opsw = new OutputStreamWriter(ops);

@@ -9,8 +9,7 @@ public class CreateDataSetFromHive {
         SparkSession spark = SparkSession
                 .builder()
                 .appName("JavaSparkHive")
-//                .master("local")
-//                .config("com.jyong.scala.com.jyong.scala.spark.sql.warehouse.dir", warehouseLocation)
+                .master("local")
                 .config("hive.metastore.uris","thrift://c7node1:9083")
                 .enableHiveSupport()
                 .getOrCreate();
