@@ -43,8 +43,9 @@ public class OperatorHbase {
     //连接集群
     public  static  Connection initBbaseConnn() throws IOException {
         Configuration configuration = HBaseConfiguration.create();
-        configuration.set("hbase.zookeeper.property.clientPort","2181");
-        configuration.set("hbase.zookeeper.quorum","node01,node02,node03");
+
+        configuration.set(HConstants.ZOOKEEPER_CLIENT_PORT,"2181");
+        configuration.set(HConstants.ZOOKEEPER_QUORUM,"node01,node02,node03");
         Connection connection = ConnectionFactory.createConnection(configuration);
         return connection;
     }
