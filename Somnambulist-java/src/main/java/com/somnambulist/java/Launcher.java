@@ -1,17 +1,15 @@
 package com.somnambulist.java;
 
 
+import cn.hutool.http.HttpRequest;
+
 public class Launcher {
     public static void main(String[] args) {
-        double a = 0.1;
-        double b = 0.2;
-        double c = a + b;
-        System.out.println(c);
+
+        String url="https://www.biquge4.net/book/122480";
+        String body = HttpRequest.get(url).execute().body();
+        System.out.println(body);
 
 
     }
-
-
-
-
 }

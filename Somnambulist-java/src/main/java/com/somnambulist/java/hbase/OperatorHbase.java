@@ -10,6 +10,7 @@ import org.apache.hadoop.hbase.*;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.util.Bytes;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -24,24 +25,25 @@ public class OperatorHbase {
 //        String[] cols={"info"};
 //        createTable("person",cols);
 //        //插入数据
-        SimpleDataSource simpleDataSource = new SimpleDataSource("jdbc:mysql://192.168.92.103/jyong", "root", "123456");
-        Db db = DbUtil.use(simpleDataSource);
+//        SimpleDataSource simpleDataSource = new SimpleDataSource("jdbc:mysql://192.168.92.103/jyong", "root", "123456");
+//        Db db = DbUtil.use(simpleDataSource);
 
-        List<Entity> entities = db.findAll("person");
-
-        for (Entity entity : entities) {
-            Person person = new Person();
-            person.setId(entity.getStr("id"));
-            person.setName(entity.getStr("name"));
-            person.setSex(entity.getStr("sex"));
-            insertData("person",person);
-        }
+//        List<Entity> entities = db.findAll("person");
+//
+//        for (Entity entity : entities) {
+//            Person person = new Person();
+//            person.setId(entity.getStr("id"));
+//            person.setName(entity.getStr("name"));
+//            person.setSex(entity.getStr("sex"));
+//            insertData("person",person);
+//        }
+        getNoDealData("person");
     }
 
 
 
     //连接集群
-    public  static  Connection initBbaseConnn() throws IOException {
+    public  static Connection initBbaseConnn() throws IOException {
         Configuration configuration = HBaseConfiguration.create();
 
         configuration.set(HConstants.ZOOKEEPER_CLIENT_PORT,"2181");

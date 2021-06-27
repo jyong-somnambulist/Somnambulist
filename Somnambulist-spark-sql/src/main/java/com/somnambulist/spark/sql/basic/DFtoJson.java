@@ -13,11 +13,13 @@ public class DFtoJson {
 
 
     public static void main(String[] args) {
+        System.setProperty("hadoop.home.dir", "D:\\appinstall\\winutils-master\\hadoop-2.6.3");
         SparkSession session = SparkSession.builder().appName("job").master("local[*]").getOrCreate();
 
         Dataset<Row> rowDataset = session.read().json("D:\\data\\people.json");
         //直接写入，造成null值的key被过滤掉
-        rowDataset.write().format("JSON").json("D:\\data\\people2.json");
+        rowDataset.write().format("JSON")
+                .option("spark.sql.jsonGenerator.ignoreNullFields", "true").json("D:\\data\\people3.json");
 
 
     }

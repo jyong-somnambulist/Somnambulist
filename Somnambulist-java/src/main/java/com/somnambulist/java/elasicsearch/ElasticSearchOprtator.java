@@ -10,6 +10,8 @@ import com.google.common.collect.Maps;
 import java.util.Locale;
 import java.util.Map;
 
+import static com.somnambulist.commons.session.SessionUtils.getAvailableEsUrl;
+
 public class ElasticSearchOprtator {
 
 
